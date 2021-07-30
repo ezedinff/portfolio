@@ -16,9 +16,16 @@
     "next": "9.1.1",
     "react": "latest",
     "react-dom": "latest",
+    "styled-components": "^5.3.0",
     "typescript": "3.6.4"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   },
   "license": "ISC",
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/styled-components": "^5.1.11"
+  }
 }
