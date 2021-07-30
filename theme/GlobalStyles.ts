@@ -146,12 +146,12 @@ const GlobalStyle = createGlobalStyle<Theme>`
 
   .big-heading {
     margin: 0;
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: clamp(40px, 8vw, 68px);
   }
 
   .medium-heading {
     margin: 0;
-    font-size: clamp(40px, 8vw, 60px);
+    font-size: clamp(40px, 8vw, 50px);
   }
 
   .numbered-heading {
