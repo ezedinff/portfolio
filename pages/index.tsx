@@ -15,7 +15,7 @@ const Home = () => {
     <div id="root">
       <SearchEngineOptimization
         title={"Ezedin Fedlu - Software Engineer"}
-        siteUrl={"https://ezedin.fedlu.com/"}
+        siteUrl={"https://ezedin.fedlu.com"}
         image={"https://avatars.githubusercontent.com/u/19648503"}
         description="I'm software engineer who specializes in building (and occasionally designing) exceptional digital experiences."
       />
