@@ -16,6 +16,7 @@
     "next": "9.1.1",
     "react": "latest",
     "react-dom": "latest",
+    "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.0",
     "typescript": "3.6.4"
   },
@@ -26,6 +27,7 @@
   "keywords": [],
   "description": "",
   "devDependencies": {
+    "@types/react-transition-group": "^4.4.2",
     "@types/styled-components": "^5.1.11"
   }
 }

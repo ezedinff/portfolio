@@ -1,7 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import { Theme } from ".";
 import TransitionStyles from "./TransitionStyles";
 import variables from "./Variables";
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<Theme>`
     ${variables};
     html {
     box-sizing: border-box;
@@ -237,6 +238,11 @@ const GlobalStyle = createGlobalStyle`
     &:focus {
       color: var(--green);
     }
+
+    &.inline-link {
+      ${(theme: Theme) => theme.mixins.inlineLink};
+    }
+
     &[target='_blank'] {
       cursor: ne-resize;
     }
@@ -270,6 +276,11 @@ const GlobalStyle = createGlobalStyle`
     &:last-of-type {
       margin: 0;
     }
+
+    & > a {
+      ${(theme: Theme) => theme.mixins.inlineLink};
+    }
+
     & > code {
       background-color: var(--light-navy);
       color: var(--white);
@@ -329,6 +340,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .skip-to-content {
+    ${(theme: Theme) => theme.mixins.button};
     position: absolute;
     top: auto;
     left: -999px;
@@ -376,6 +388,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     a {
+      ${(theme: Theme) => theme.mixins.inlineLink};
       line-height: 1.5;
     }
   }
@@ -393,6 +406,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     a {
+      ${(theme: Theme) => theme.mixins.inlineLink};
       font-family: var(--font-mono);
       font-size: var(--fz-sm);
       font-weight: 600;

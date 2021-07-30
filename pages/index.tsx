@@ -1,9 +1,10 @@
 import SearchEngineOptimization from "../src/components/SearchEngineOptimization";
+import Hero from "../src/components/sections/Hero";
 
 const Home = () => {
    return <>
    <SearchEngineOptimization title={"HomePage"} />
-   <h1>Hello World, This is Ezedin</h1>
+   <Hero />
    </>
 };
 export default Home;

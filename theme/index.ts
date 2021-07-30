@@ -1,4 +1,11 @@
-export default {
+import { DefaultTheme } from "styled-components";
+import mixins from "./mixins";
+
+export interface Theme extends DefaultTheme {
+  bp: any;
+  mixins: any;
+}
+const theme: Theme = {
   bp: {
     mobileS: `max-width: 330px`,
     mobileM: `max-width: 400px`,
@@ -9,5 +16,8 @@ export default {
     desktopS: `max-width: 1080px`,
     desktopM: `max-width: 1200px`,
     desktopL: `max-width: 1400px`,
-  }
+  },
+  mixins,
 };
+
+export default theme;
