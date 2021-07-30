@@ -23,7 +23,7 @@ const Home = () => {
         <GlobalStyle bp={theme.bp} mixins={theme.mixins} />
         <StyledContent>
           <Social isHome={true} />
-          <div id="content">
+          <div id="content" style={{padding: '0 24px'}}>
             <Hero />
           </div>
         </StyledContent>
