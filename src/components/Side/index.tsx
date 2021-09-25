@@ -3,11 +3,13 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 import { loaderDelay } from "../../configs";
+import { ReactNode } from "hoist-non-react-statics/node_modules/@types/react";
 
 const StyledSideElement = styled.div`
   width: 40px;
   position: fixed;
   bottom: 0;
+  display: inline;
   left: ${(props: any) => (props.orientation === "left" ? "40px" : "auto")};
   right: ${(props: any) => (props.orientation === "left" ? "auto" : "40px")};
   z-index: 10;
@@ -26,14 +28,15 @@ const StyledSideElement = styled.div`
 interface Props {
   isHome: boolean;
   orientation: "left" | "right";
+  children: ReactNode;
 }
 
-const Side: React.FC<Props> = ({ children, isHome }) => {
-  const [isMounted, setIsMounted] = useState(!isHome);
+const Side: React.FC<Props> = (props: Props) => {
+  const [isMounted, setIsMounted] = useState(!props.isHome);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (!isHome || prefersReducedMotion) {
+    if (!props.isHome || prefersReducedMotion) {
       return;
     }
     const timeout = setTimeout(() => setIsMounted(true), loaderDelay);
@@ -41,17 +44,17 @@ const Side: React.FC<Props> = ({ children, isHome }) => {
   }, []);
 
   return (
-    <StyledSideElement>
+    <StyledSideElement {...props}>
       {prefersReducedMotion ? (
-        <>{children}</>
+        <>{props.children}</>
       ) : (
         <TransitionGroup component={null}>
           {isMounted && (
             <CSSTransition
-              classNames={isHome ? "fade" : ""}
-              timeout={isHome ? loaderDelay : 0}
+              classNames={props.isHome ? "fade" : ""}
+              timeout={props.isHome ? loaderDelay : 0}
             >
-              {children}
+              {props.children}
             </CSSTransition>
           )}
         </TransitionGroup>
@@ -59,5 +62,4 @@ const Side: React.FC<Props> = ({ children, isHome }) => {
     </StyledSideElement>
   );
 };
-
 export default Side;

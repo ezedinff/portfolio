@@ -42,7 +42,7 @@ const StyledSocialList = styled.ul`
   }
 `;
 const Social = ({ isHome }: {isHome: boolean}) => (
-  <Side isHome={isHome} orientation="left">
+  <Side isHome={isHome} orientation="right">
     <StyledSocialList>
       {socialMedia &&
         socialMedia.map(({ url, name }, i) => (

@@ -1,5 +1,6 @@
-import { Children } from "react";
+import React from "react";
 import styled from "styled-components";
+import Email from "../Email";
 import Social from "../Social";
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -12,7 +13,7 @@ const StyledContent = styled.div`
   min-height: 100vh;
 `;
 
-const layout: React.FC = () => {
+const layout: React.FC = ({children}) => {
   return (
     <div id="root">
     <a className="skip-to-content" href="#content">
@@ -20,8 +21,9 @@ const layout: React.FC = () => {
     </a>
     <StyledContent>
         <Social isHome={true}/>
+        <Email isHome={true} />
         <div id="content">
-            {Children}
+          {children}
         </div>
     </StyledContent>
   </div>
