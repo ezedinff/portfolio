@@ -5,7 +5,6 @@ import { useScrollDirection, usePrefersReducedMotion } from '../../hooks';
 import { IconLogo } from '../icons';
 import Link from "next/link";
 import Menu from "../Menu";
-// @ts-ignore
 const StyledHeader = styled.header<{scrollDirection: string; scrolledToTop: boolean;}>`
   ${({ theme }) => theme.mixins.flexBetween};
   position: fixed;
@@ -85,7 +84,7 @@ const StyledNav = styled.nav`
 const StyledLinks = styled.div`
   display: flex;
   align-items: center;
-
+flex-direction: row;
   @media (max-width: 768px) {
     display: none;
   }
@@ -194,7 +193,9 @@ const Header = ({isHome}) => {
                                 {navLinks &&
                                 navLinks.map(({ url, name }, i) => (
                                     <li key={i}>
-                                        <Link href={url}>{name}</Link>
+                                        <Link href={url}>
+                                            <a>{name}</a>
+                                        </Link>
                                     </li>
                                 ))}
                             </ol>
