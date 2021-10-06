@@ -81,10 +81,9 @@ const StyledNav = styled.nav`
   }
 `;
 
-const StyledLinks = styled.div`
+const StyledLinks = styled.span`
   display: flex;
   align-items: center;
-flex-direction: row;
   @media (max-width: 768px) {
     display: none;
   }
