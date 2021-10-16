@@ -5,6 +5,7 @@ import GlobalStyle from "../theme/GlobalStyles";
 import theme from "../theme";
 import SearchEngineOptimization from "../src/components/SearchEngineOptimization";
 import Layout from "../src/components/Layout";
+import About from "../src/components/sections/About";
 // const StyledContent = styled.div`
 //   display: flex;
 //   flex-direction: column;
@@ -26,7 +27,8 @@ const Home = () => {
 
       <Layout>
         <StyledMainContainer className="fillHeight">
-          <Hero />
+            <Hero />
+            <About />
         </StyledMainContainer>
       </Layout>
     </>
