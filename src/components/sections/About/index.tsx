@@ -137,7 +137,7 @@ const About = () => {
                 <StyledText>
                     <div>
                         <p>
-                            Hello! My name is Ezedin and I'm Talented Senior Software Engineer proficient in all phases of the software
+                            Hello! I'm Ezedin <small>(Dark Horse)</small> and I'm Talented Senior Software Engineer proficient in all phases of the software
                             development lifecycle. Adept at working with Agile and Scrum
                             methodologies to accomplish project milestones according to specific
                             timeframes. Highly organized and detail-oriented
