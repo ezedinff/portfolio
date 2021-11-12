@@ -5,7 +5,7 @@ const IconLogo = () => (
          width="300.000000pt" height="298.000000pt" viewBox="0 0 300.000000 298.000000"
          preserveAspectRatio="xMidYMid meet">
 
-        <g transform="translate(0.000000,298.000000) scale(0.100000,-0.100000)"
+        <g id="B" transform="translate(0.000000,298.000000) scale(0.100000,-0.100000)"
            fill="currentColor" stroke="none">
             <path d="M1390 2904 c-192 -131 -252 -150 -398 -128 -120 18 -159 17 -208 -6
 -50 -25 -84 -72 -119 -165 -35 -93 -66 -145 -112 -185 -34 -30 -64 -46 -216
