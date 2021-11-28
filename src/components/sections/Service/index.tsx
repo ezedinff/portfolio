@@ -56,8 +56,9 @@ const StyledServicesSection = styled.section`
     cursor: pointer;
     transform: perspective(1000px) translateZ(0px) rotateX(0deg) rotateY(0deg); transition: all 150ms linear 0s;
     .service-desc{
-      font-size: .8em;
+      font-size: 1.1rem;
       margin: 0 24px;
+      text-align: center;
     }
     .icon {
       ${({ theme }) => theme.mixins.flexCenter};
