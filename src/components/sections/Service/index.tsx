@@ -68,5 +68,11 @@ const StyledServicesSection = styled.section`
       user-select: none;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .card {
+      width: 100%;
+    }
+  }
 `;
 export default Service;
