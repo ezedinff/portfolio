@@ -42,6 +42,8 @@ const StyledServicesSection = styled.section`
     width: 100%;
   }
   .card{
+    ${({ theme }) => theme.mixins.boxShadow};
+    ${({ theme }) => theme.mixins.flexBetween};
     display: flex;
     flex-direction: column;
     background-color: var(--light-navy);
@@ -54,7 +56,7 @@ const StyledServicesSection = styled.section`
     margin: 16px;
     border-radius: 16px;
     cursor: pointer;
-    transform: perspective(1000px) translateZ(0px) rotateX(0deg) rotateY(0deg); transition: all 150ms linear 0s;
+    transition: var(--transition);
     .service-desc{
       font-size: 1.1rem;
       margin: 0 24px;
