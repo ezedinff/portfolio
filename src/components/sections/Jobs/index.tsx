@@ -117,11 +117,6 @@ const Jobs = () => {
                         </a>
                       </span>
                                     </h3>
-                                    <div>
-                                        {
-                                            experience.skills.map((skill, i) => <StyledTechTag key={`${company}-skill-${skill}-${i}`}>{skill}</StyledTechTag>)
-                                        }
-                                    </div>
 
                                     <p className="range">{range}</p>
 
@@ -130,6 +125,11 @@ const Jobs = () => {
                                             experience.things.map((thing, i) => <li key={`${company}-deeds-${i}`}>{thing}</li>)
                                         }
                                     </ul>
+                                    <div>
+                                        {
+                                            experience.skills.map((skill, i) => <StyledTechTag key={`${company}-skill-${skill}-${i}`}>{skill}</StyledTechTag>)
+                                        }
+                                    </div>
                                 </StyledTabPanel>
                             </CSSTransition>
                         );
