@@ -59,6 +59,18 @@ export const StyledTabList = styled.div`
   }
 `;
 
+export const StyledTechTag = styled.span`
+  ${({ theme }) => theme.mixins.link};
+  color: var(--green);
+  border: 1px solid var(--green);
+  padding: 2px 8px;
+  margin: 4px 8px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  &:hover{
+    background-color: #64ffda20;
+  }
+`
 
 export const StyledTabButton = styled.button`
   ${({ theme }) => theme.mixins.link};

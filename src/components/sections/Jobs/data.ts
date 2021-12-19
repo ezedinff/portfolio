@@ -4,6 +4,7 @@ interface Experience {
     location: string;
     range: [string, string];
     things: Array<string>;
+    skills: Array<string>;
 }
 
 const experiences: Array<Experience> = [
@@ -15,10 +16,13 @@ const experiences: Array<Experience> = [
         things: [
             'Developed and shipped highly performant Loan decision API for security finance',
             'Developing and Maintaining different Restful APIs for different applications and clients for security finance',
+        ],
+        skills: [
+            "Microsoft Windows", "IIS", "Dapper", ".NET core", "SQL Server"
         ]
     },
     {
-        title: 'Full Stack Engineer',
+        title: 'Senior Full Stack Engineer',
         company: 'Birrbet PLC',
         location: 'Addis Ababa, Ethiopia',
         range: ['Jun,2019', ' - Apr,2021'],
@@ -27,10 +31,13 @@ const experiences: Array<Experience> = [
             'Built and shipped mirco services with federated Graphql API for Birrbet sport betting application',
             'Architected and implemented sport wagering application',
             'Built CI/CD pipeline and deployed on AWS cloud'
+        ],
+        skills: [
+            "Microsoft Windows", "IIS", "Entity Framework", ".NET core", "SQL Server", "React", "Material UI"
         ]
     },
     {
-        title: 'Backend Engineer',
+        title: 'Senior Backend Engineer',
         company: 'I-cog Labs',
         location: 'Addis Ababa, Ethiopia',
         range: ['Dec,2020', ' - Mar,2021'],
@@ -38,6 +45,9 @@ const experiences: Array<Experience> = [
             'Developed and shipped performant Restful API for Japanese Kids E-learning platform',
             'Built and shipped the Apple Music Extension within Facebook Messenger leveraging third-party and internal APIs',
             'Designed and Architected Database Tables',
+        ],
+        skills: [
+            "Linux", "AWS EC2", "AWS Lamda", "AWS SES", "MySQL", "Redis"
         ]
     },
     {
@@ -49,6 +59,9 @@ const experiences: Array<Experience> = [
             'Developed and shipped highly interactive Web based monitoring and evaluation system for VITA (irish aided NGO)',
             'Developed and shipped highly interactive web supply and demand agricultural input aggregation platform local farm centers',
             'Developed and shipped highly interactive ecommerce application called malladdis ',
+        ],
+        skills: [
+            "Linux", "Cpanel", "Laravel", "Nodejs", "MySQL", "Angular", "React", "Mongodb", "Nginx", "Apache", "Chart.js", "D3.js"
         ]
     },
     {
@@ -59,16 +72,22 @@ const experiences: Array<Experience> = [
         things: [
             'Developed and shipped highly interactive android based mobile casino multiplier game',
             'Designed and Architected Database Tables, APIs and so on',
+        ],
+        skills: [
+            "Linux Ubuntu", "nginx", "Nodejs", "Mongodb", "MySQL", "Java", "Android", "Andengine", "SQLite"
         ]
     },
     {
-        title: 'Full stack Mobile Developer',
+        title: 'Full stack Engineer',
         company: 'NuExchange',
         location: 'Addis Ababa, Ethiopia',
         range: ['May,2015', ' - Aug,2015'],
         things: [
             'Developed and shipped highly interactive web based livestock auction amd sales trading platform',
             'Designed and Architected Database Tables, APIs and so on',
+        ],
+        skills: [
+            "Linux", "Apache", "Laravel", "MySQL", "Materialize CSS"
         ]
     },
 ];
