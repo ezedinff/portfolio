@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import { email, navDelay, loaderDelay } from '../../../configs';
+import {email, navDelay, loaderDelay, srConfig} from '../../../configs';
 import usePrefersReducedMotion from '../../../hooks/usePrefersReducedMotion';
 
 const StyledHeroSection = styled.section`
@@ -47,13 +47,20 @@ const StyledHeroSection = styled.section`
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
     if (prefersReducedMotion) {
       return;
     }
-
+    async function animate() {
+      if (revealContainer.current) {
+        const sr = (await import("scrollreveal")).default
+        sr().reveal(revealContainer.current, srConfig())
+      }
+    }
+    animate()
     const timeout = setTimeout(() => setIsMounted(true), navDelay);
     return () => clearTimeout(timeout);
   }, []);
@@ -80,7 +87,7 @@ const Hero = () => {
   const items = [one, two, three, four, five];
 
   return (
-    <StyledHeroSection>
+    <StyledHeroSection id={"home"} ref={revealContainer}>
       {prefersReducedMotion ? (
         <>
           {items.map((item, i) => (

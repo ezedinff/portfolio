@@ -5,6 +5,7 @@ import Social from "../Social";
 import Header from "../Header";
 import { useRouter } from "next/router";
 import Loader from "../Loader";
+import Footer from "../Footer";
 
 if (typeof window !== "undefined") {
   // eslint-disable-next-line global-require
@@ -39,6 +40,7 @@ const layout: React.FC = ({children}) => {
                         <Email isHome={true} />
                         <div id="content">
                             {children}
+                            <Footer />
                         </div>
                     </StyledContent>
                 )

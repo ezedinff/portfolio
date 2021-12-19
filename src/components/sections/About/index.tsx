@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import usePrefersReducedMotion from '../../../hooks/usePrefersReducedMotion';
 import Image from 'next/image';
 import {ImageLoaderProps} from "next/dist/client/image";
+import {srConfig} from "../../../configs";
+// import {srConfig} from "../../../configs";
+// import sr from "../../../utils/sr";
 
 
 const myLoader = (props: ImageLoaderProps) => {
@@ -10,7 +13,6 @@ const myLoader = (props: ImageLoaderProps) => {
     return `https://avatars.githubusercontent.com/u/${props.src}?w=${props.width}`
 }
 const StyledAboutSection = styled.section`
-  max-width: 900px;
 
   .inner {
     display: grid;
@@ -118,13 +120,20 @@ const StyledPic = styled.div`
 `;
 
 const About = () => {
-    const revealContainer = useRef(null);
+    const revealContainer = useRef<HTMLElement>(null);
     const prefersReducedMotion = usePrefersReducedMotion();
 
     useEffect(() => {
         if (prefersReducedMotion) {
             return;
         }
+        async function animate() {
+            if (revealContainer.current) {
+                const sr = (await import("scrollreveal")).default
+                sr().reveal(revealContainer.current, srConfig())
+            }
+        }
+        animate()
     }, []);
 
     const skills = ['JavaScript (ES6+)', 'React', 'Angular', 'Laravel', 'Node.js', 'Flutter', '.Net core'];

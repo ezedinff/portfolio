@@ -121,9 +121,9 @@ const StyledLinks = styled.span`
   }
 `;
 const navLinks = [
-    {url: '', name: 'Home'},
-    {url: '', name: 'Services'},
-    {url: '', name: 'Experience'},
+    {url: '#about', name: 'About me'},
+    {url: '#services', name: 'Services'},
+    {url: '#jobs', name: 'Experience'},
     {url: '', name: 'Work'},
     {url: '', name: 'Blog'}
 ];

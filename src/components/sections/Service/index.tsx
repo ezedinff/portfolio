@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import styled from 'styled-components';
 import {deploymentIcon, designIcon, developmentIcon, maintenanceIcon} from "../../icons/services";
+import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
+import {srConfig} from "../../../configs";
 
 const cards = [
     {title: "Design", icon: designIcon, description: "Product design, UI/UX design, Design systems" },
@@ -10,8 +12,23 @@ const cards = [
 ]
 
 const Service  = () => {
+    const revealContainer = useRef(null);
+    const prefersReducedMotion = usePrefersReducedMotion();
+
+    useEffect(() => {
+        if (prefersReducedMotion) {
+            return;
+        }
+        async function animate() {
+            if (revealContainer.current) {
+                const sr = (await import("scrollreveal")).default
+                sr().reveal(revealContainer.current, srConfig())
+            }
+        }
+        animate()
+    }, []);
     return (
-        <StyledServicesSection>
+        <StyledServicesSection id={"services"} ref={revealContainer}>
             <h2 className="numbered-heading">What I'm Offering</h2>
             <div className="card-wrapper">
                 {

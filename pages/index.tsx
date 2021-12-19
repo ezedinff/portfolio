@@ -7,6 +7,7 @@ import SearchEngineOptimization from "../src/components/SearchEngineOptimization
 import Layout from "../src/components/Layout";
 import About from "../src/components/sections/About";
 import Service from "../src/components/sections/Service";
+import Jobs from "../src/components/sections/Jobs";
 // const StyledContent = styled.div`
 //   display: flex;
 //   flex-direction: column;
@@ -31,6 +32,7 @@ const Home = () => {
             <Hero />
             <About />
             <Service />
+            <Jobs />
         </StyledMainContainer>
       </Layout>
     </>
