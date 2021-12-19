@@ -30,7 +30,6 @@ export const StyledTabList = styled.div`
     overflow-x: auto;
     width: calc(100% + 100px);
     padding-left: 50px;
-    margin-left: -50px;
     margin-bottom: 30px;
   }
   @media (max-width: 480px) {
@@ -92,7 +91,7 @@ export const StyledTabButton = styled.button`
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
-    min-width: 120px;
+    inline-size: min-content;
     padding: 0 15px;
     border-left: 0;
     border-bottom: 2px solid var(--lightest-navy);
@@ -123,9 +122,7 @@ export const StyledHighlight = styled.div`
   @media (max-width: 600px) {
     top: auto;
     bottom: 0;
-    width: 100%;
-    max-width: var(--tab-width);
-    height: 2px;
+    height: 0px;
     margin-left: 50px;
     transform: translateX(calc(${({ activeTabId }: {activeTabId: any}) => activeTabId} * var(--tab-width)));
   }
