@@ -14,7 +14,7 @@ const experiences: Array<Experience> = [
     location: "Addis Ababa, Ethiopia",
     range: ["July,2021", " - Present"],
     things: [
-      "Developing highly performant Material Management system",
+      "Developing highly performant Material Management system for managing weapons and other things",
       "Developing and Maintaining different Restful APIs for different applications",
     ],
     skills: [
