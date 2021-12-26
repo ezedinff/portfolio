@@ -10,6 +10,26 @@ interface Experience {
 const experiences: Array<Experience> = [
   {
     title: "Full Stack Engineer",
+    company: "Ethiopian Federal Police Commission",
+    location: "Addis Ababa, Ethiopia",
+    range: ["July,2021", " - Present"],
+    things: [
+      "Developing highly performant Material Management system",
+      "Developing and Maintaining different Restful APIs for different applications",
+    ],
+    skills: [
+      "Microsoft Windows",
+      "IIS",
+      "Entity Framework",
+      ".NET core",
+      "SQL Server",
+      "Angular",
+      "Ngrx",
+      "Angular Material",
+    ],
+  },
+  {
+    title: "Full Stack Engineer",
     company: "Excellerent Technology Solutions",
     location: "Addis Ababa, Ethiopia",
     range: ["Apr,2021", " - Present"],

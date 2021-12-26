@@ -64,10 +64,6 @@ const StyledCredit = styled.div`
   }
 `;
 const Footer = () => {
-    const githubInfo = {
-        stars: '2.5k',
-        forks: '500'
-    }
     return (
         <StyledFooter>
             <StyledSocialLinks>

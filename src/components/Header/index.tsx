@@ -124,7 +124,7 @@ const navLinks = [
     {url: '#about', name: 'About me'},
     {url: '#services', name: 'Services'},
     {url: '#jobs', name: 'Experience'},
-    {url: '', name: 'Work'},
+    {url: '#projects', name: 'Projects'},
     {url: '', name: 'Blog'}
 ];
 

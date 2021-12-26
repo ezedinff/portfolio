@@ -8,6 +8,7 @@ import Layout from "../src/components/Layout";
 import About from "../src/components/sections/About";
 import Service from "../src/components/sections/Service";
 import Jobs from "../src/components/sections/Jobs";
+import Projects from "../src/components/sections/Projects";
 // const StyledContent = styled.div`
 //   display: flex;
 //   flex-direction: column;
@@ -33,6 +34,7 @@ const Home = () => {
             <About />
             <Service />
             <Jobs />
+            <Projects />
         </StyledMainContainer>
       </Layout>
     </>
