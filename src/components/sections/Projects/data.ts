@@ -21,13 +21,23 @@ const projects: Array<Project> = [
   },
   {
     date: "2020-03-27",
-    title: "E-zoom",
-    github: "https://github.com/ezedinff/ezoom",
-    demo: "https://ezoom.herokuapp.com/",
-    tech: ["react", "material-ui", "firebase", "WebRTC", "Canvas", "WebGL"],
+    title: "Adrash",
+    github: "https://github.com/ezedinff/Adrash-Frontend",
+    demo: "https://elastic-varahamihira-4b6ce0.netlify.app/",
+    tech: [
+      "Ionic",
+      "React",
+      "Firebase",
+      "Location API",
+      "leaflet js",
+      "Google Map",
+      "Socket.io",
+      "Express",
+      "NestJS",
+    ],
     showInProjects: true,
     description:
-      "Video conferencing application highly inspired by zoom which mainly used for E-learning",
+      "Most of us want to find a shortest taxi route that takes us to where we want to. In addition, when a new visitor arrives in our capital city Addis Ababa, he/she wants to know where to take a taxi and where its destination would be. There are a number of problems that prevent this from happening...",
   },
   {
     date: "2020-03-27",
@@ -57,23 +67,13 @@ const projects: Array<Project> = [
   },
   {
     date: "2020-03-27",
-    title: "Adrash",
-    github: "https://github.com/ezedinff/Adrash-Frontend",
-    demo: "https://elastic-varahamihira-4b6ce0.netlify.app/",
-    tech: [
-      "Ionic",
-      "React",
-      "Firebase",
-      "Location API",
-      "leaflet js",
-      "Google Map",
-      "Socket.io",
-      "Express",
-      "NestJS",
-    ],
+    title: "E-zoom",
+    github: "https://github.com/ezedinff/ezoom",
+    demo: "https://ezoom.herokuapp.com/",
+    tech: ["react", "material-ui", "firebase", "WebRTC", "Canvas", "WebGL"],
     showInProjects: true,
     description:
-      "Most of us want to find a shortest taxi route that takes us to where we want to. In addition, when a new visitor arrives in our capital city Addis Ababa, he/she wants to know where to take a taxi and where its destination would be. There are a number of problems that prevent this from happening...",
+      "Video conferencing application highly inspired by zoom which mainly used for E-learning",
   },
 ];
 
