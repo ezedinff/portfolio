@@ -176,7 +176,7 @@ const Header = ({isHome}) => {
     );
 
     const ResumeLink = (
-        <a className="resume-button" href="https://firebasestorage.googleapis.com/v0/b/ezedin-fedlu.appspot.com/o/ezedin%20cv.pdf?alt=media&token=90a093a6-c911-4489-a64b-3412476e7641" target="_blank" rel="noopener noreferrer">
+        <a className="resume-button" href="https://drive.google.com/file/d/1N3N9KXwPss_i7YilqH7rbISxi_xxxTHL/view?usp=sharing" target="_blank" rel="noopener noreferrer">
             Resume
         </a>
     );
