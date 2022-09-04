@@ -9,6 +9,7 @@ import About from "../src/components/sections/About";
 import Service from "../src/components/sections/Service";
 import Jobs from "../src/components/sections/Jobs";
 import Projects from "../src/components/sections/Projects";
+import { useEffect } from 'react';
 // const StyledContent = styled.div`
 //   display: flex;
 //   flex-direction: column;
@@ -18,6 +19,20 @@ const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 const Home = () => {
+  useEffect(() => {
+    fetch("api/keys", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => console.log(err));
+  });
+
   return (
     <>
       <SearchEngineOptimization
