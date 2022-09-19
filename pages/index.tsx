@@ -19,7 +19,7 @@ const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 
-export async function getServersideProps() {
+export async function getStaticProps() {
   const experiences = await getExperience();
   return {
     props: {
