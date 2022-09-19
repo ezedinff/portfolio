@@ -9,6 +9,7 @@ import About from "../src/components/sections/About";
 import Service from "../src/components/sections/Service";
 import Jobs from "../src/components/sections/Jobs";
 import Projects from "../src/components/sections/Projects";
+import { getExperience, Experience } from '../src/services/get-data';
 // const StyledContent = styled.div`
 //   display: flex;
 //   flex-direction: column;
@@ -17,7 +18,15 @@ import Projects from "../src/components/sections/Projects";
 const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
-const Home = () => {
+
+export async function getStaticProps() {
+  return {
+    props: {
+      experiences: await getExperience()
+    },
+  };
+}
+const Home: React.FC<{experiences: Experience[]}> = ({ experiences }) => {
   return (
     <>
       <SearchEngineOptimization
@@ -33,7 +42,7 @@ const Home = () => {
             <Hero />
             <About />
             <Service />
-            <Jobs />
+            <Jobs experiences={experiences} />
             <Projects />
         </StyledMainContainer>
       </Layout>
