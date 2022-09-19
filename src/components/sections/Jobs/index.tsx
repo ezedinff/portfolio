@@ -11,9 +11,9 @@ import {
     StyledTabPanels, StyledTechTag
 } from "./styles";
 import {KEY_CODES} from "../../Menu";
-import experiences from "./data";
+import { Experience } from '../../../services/get-data';
 
-const Jobs = () => {
+const Jobs: React.FC<{experiences: Experience[]}> = ({ experiences }) => {
     const revealContainer = useRef<HTMLElement>(null);
     const prefersReducedMotion = usePrefersReducedMotion();
 
@@ -98,7 +98,7 @@ const Jobs = () => {
                 <StyledTabPanels>
                     {experiences &&
                     experiences.map((experience, i) => {
-                        const { title, company, range } = experience;
+                        const { role, company, startDate, endDate } = experience;
 
                         return (
                             <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -109,7 +109,7 @@ const Jobs = () => {
                                     aria-hidden={activeTabId !== i}
                                     hidden={activeTabId !== i}>
                                     <h3>
-                                        <span>{title}</span>
+                                        <span>{role}</span>
                                         <span className="company">
                         &nbsp;@&nbsp;
                                             <a href={"#"} className="inline-link">
@@ -118,11 +118,11 @@ const Jobs = () => {
                       </span>
                                     </h3>
 
-                                    <p className="range">{range}</p>
+                                    <p className="range">{startDate} - {endDate}</p>
 
                                     <ul>
                                         {
-                                            experience.things.map((thing, i) => <li key={`${company}-deeds-${i}`}>{thing}</li>)
+                                            experience.paragraphs.map((paragraph, i) => <li key={`${company}-deeds-${i}`}>{paragraph}</li>)
                                         }
                                     </ul>
                                     <div>

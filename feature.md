@@ -31,3 +31,93 @@
     - who the audience is
 - promote your brand
 - pitch yourself
+
+# what is a brand
+- a brand is a name, term, design, symbol, or any other feature that identifies one seller's good or service as distinct from those of other sellers.
+
+# what is a brand identity
+- a brand identity is the visual elements that make up a brand's personality. It includes the logo, color palette, typography, and any other visual elements that make up the brand's visual appearance.
+
+# what is a brand strategy
+- a brand strategy is the plan for how a brand will communicate its identity and differentiate itself from competitors.
+
+# what is a brand voice
+- a brand voice is the way a brand communicates with its audience. It includes the tone, language, and personality that the brand uses to speak to its audience.
+
+
+# structures of db
+hero section
+      [
+	- title
+	- sub-title
+	- description
+	- enabled
+      ]
+about me
+      [
+	- title
+	- paragraphs
+	- skills
+	- picture
+	- enabled
+      ]
+services
+	- icon
+	- title
+	- slug
+	- description
+	- enabled
+[X] experiences
+	- role
+	- company
+	- company_website
+	- location
+	- projects
+	      [
+		- start
+		- end
+		- duration
+		- paragraphs
+		- skills
+	      ]
+	- enabled
+education
+	- school
+	- degree
+	- start
+	- end
+	- field_of_study
+	- enabled
+certifications and licenses
+	- title
+	- issue_by
+	- link
+	- issued_date
+	- expiry_date
+	- enabled
+[] projects
+	- title
+	- description
+	- skills
+	- repo link
+	- demo link
+	- enabled
+socials
+	- name
+	- icon
+	- link
+	- enabled
+contacts
+	- email
+	- phones
+	- skype
+	- whatsapp
+	- enabled
+Home
+	- hero: {}
+	- about: {}
+	- services: {}
+	- experiences: EX
+	- 
+
+
