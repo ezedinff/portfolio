@@ -1,6 +1,5 @@
 .notion-app {
     background: transparent !important;
-    margin-top: 10em;
 }
 
 /* any children in the notion-app div should not have background */

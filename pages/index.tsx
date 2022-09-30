@@ -2,7 +2,12 @@ import * as React from 'react'
 import { domain } from 'lib/config'
 import { resolveNotionPage } from 'lib/resolve-notion-page'
 import { NotionPage } from 'components'
+import styled from 'styled-components'
+import Layout from '../src/components/Layout';
 
+const StyledMainContainer = styled.main`
+  counter-reset: section;
+`;
 export const getStaticProps = async () => {
   try {
     const props = await resolveNotionPage(domain)
@@ -18,5 +23,9 @@ export const getStaticProps = async () => {
 }
 
 export default function NotionDomainPage(props) {
-  return <NotionPage {...props} />
+  return <Layout>
+    <StyledMainContainer>
+      <NotionPage {...props} />
+    </StyledMainContainer>
+  </Layout>
 }
