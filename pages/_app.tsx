@@ -72,11 +72,11 @@ export default function App({ Component, pageProps }: AppProps) {
       router.events.off('routeChangeComplete', onRouteChangeComplete)
     }
   }, [router.events])
-
+  const AnyComponent = Component as any
   return (
     <ThemeProvider theme={theme} >
       <GlobalStyle bp={theme.bp} mixins={theme.mixins} />
-      <Component {...pageProps} />
+      <AnyComponent {...pageProps} />
     </ThemeProvider>
   )
 }
