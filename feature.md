@@ -1,3 +1,15 @@
+# List Of Features I am going to add next
+[] [Blog](https://github.com/transitive-bullshit/nextjs-notion-starter-kit)
+[] [Resume Builder](https://github.com/sadanandpai/resume-builder)
+[] [Portfolio](https://ezedinfedlu.com/)
+[] Applications to showcase
+	  [] E-zoom - zoom like application
+	  [] E-commerce - 
+	  [] Chat Application - [Chat Engine](https://chatengine.io/)
+	  [] White Board - [White Board]
+
+
+
 # Features
 [] intro about me
 [] services that i'm currently providing
