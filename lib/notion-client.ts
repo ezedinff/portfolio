@@ -29,7 +29,7 @@ export const queryDatabase = async (): Promise<NotionPage[]> => {
     const path = `/databases/${notion_api_database_id}/query`;
     const body = {
         filter: {
-            property: 'published',
+            property: 'Public',
             checkbox: {
                 equals: true,
             }
@@ -38,8 +38,9 @@ export const queryDatabase = async (): Promise<NotionPage[]> => {
     const { results } = await notionClient(path, body);
     return results.map((page: any) => {
         const { id, cover, properties, url } = page;
-        const title = properties.page.title[0].plain_text;
-        const description = properties.description.rich_text[0].plain_text;
+        console.log('page', page);
+        const title = properties.Name.title[0].plain_text;
+        const description = properties.Description.rich_text[0]?.plain_text ?? null;
         let cover_url = '';
         if (cover) {
             cover_url = cover.type === 'external' ? cover.external.url : cover.type === 'file' ? cover.file.url : '';
