@@ -16,10 +16,7 @@ import {
   Site
 } from './types'
 
-export const rootNotionPageId: string = parsePageId(
-  getSiteConfig('rootNotionPageId'),
-  { uuid: false }
-)
+export const rootNotionPageId = '5a536d10135f4550945cec1394c797d9?v=54acda2bb0df42d7b0c8e24aa3241633';
 
 if (!rootNotionPageId) {
   throw new Error('Config error invalid "rootNotionPageId"')
