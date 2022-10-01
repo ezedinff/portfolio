@@ -203,3 +203,8 @@ function invertPageUrlOverrides(
     }
   }, {})
 }
+
+export const notion_api_base_url = getEnv('NOTION_API_BASE_URL', 'https://www.notion.so/api/v1')
+export const notion_api_version = getEnv('NOTION_API_VERSION', '2022-02-22')
+export const notion_api_token = getEnv('NOTION_API_TOKEN', '')
+export const notion_api_database_id = getEnv('NOTION_API_DATABASE_ID', '')

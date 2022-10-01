@@ -121,11 +121,10 @@ const StyledLinks = styled.span`
   }
 `;
 const navLinks = [
-    {url: '#about', name: 'About me'},
-    {url: '#services', name: 'Services'},
-    {url: '#jobs', name: 'Experience'},
-    {url: '#projects', name: 'Projects'},
-    {url: '', name: 'Blog'}
+    {url: 'https://www.ezedinfedlu.com#about', name: 'About me'},
+    {url: 'https://www.ezedinfedlu.com#services', name: 'Services'},
+    {url: 'https://www.ezedinfedlu.com#jobs', name: 'Experience'},
+    {url: 'https://www.ezedinfedlu.com#projects', name: 'Projects'},
 ];
 
 // @ts-ignore
@@ -229,7 +228,7 @@ const Header = ({isHome}) => {
                                 </TransitionGroup>
                             </ol>
 
-                            <TransitionGroup component={null}>
+                            {/* <TransitionGroup component={null}>
                                 {isMounted && (
                                     <CSSTransition classNames={fadeDownClass} timeout={timeout}>
                                         <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
@@ -237,7 +236,7 @@ const Header = ({isHome}) => {
                                         </div>
                                     </CSSTransition>
                                 )}
-                            </TransitionGroup>
+                            </TransitionGroup> */}
                         </StyledLinks>
 
                         <TransitionGroup component={null}>
