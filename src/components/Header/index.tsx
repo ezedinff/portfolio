@@ -125,7 +125,7 @@ const navLinks = [
     {url: '#services', name: 'Services'},
     {url: '#jobs', name: 'Experience'},
     {url: '#projects', name: 'Projects'},
-    {url: '', name: 'Blog'}
+    {url: 'https://blog.ezedinfedlu.com', name: 'Blog'}
 ];
 
 // @ts-ignore
