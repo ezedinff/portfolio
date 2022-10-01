@@ -9,9 +9,9 @@ export default siteConfig({
   rootNotionSpaceId: undefined,
 
   // basic site info (required)
-  name: 'My Blog',
+  name: 'Ezedin Fedlu\'s Blog',
   domain: 'blog.ezedinfedlu.com',
-  author: 'Ezedin',
+  author: 'Ezedin Fedlu',
 
   // open graph metadata (optional)
   description: 'I am a software engineer and this is my blog',
