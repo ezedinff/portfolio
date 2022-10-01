@@ -3,7 +3,9 @@ import { domain } from 'lib/config'
 import styled from 'styled-components'
 import Layout from '../src/components/Layout';
 import { queryDatabase } from '../lib/notion-client'
+import { resolveNotionPage } from 'lib/resolve-notion-page'
 import Link from "next/link";
+import { NotionPage } from '../components';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -74,7 +76,9 @@ const BlogCover = styled.img`
 export const getStaticProps = async () => {
   try {
     const pages = await queryDatabase()
+    const props = await resolveNotionPage(domain);
     return { props: {
+      ...props,
       pages
     }, revalidate: 10 }
   } catch (err) {
