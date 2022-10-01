@@ -2,11 +2,11 @@ import { siteConfig } from './lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '5a536d10135f4550945cec1394c797d9?v=54acda2bb0df42d7b0c8e24aa3241633',
+  rootNotionPageId: 'blog-932bd1753be94f3d867b6f1563f83c1d',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
-  rootNotionSpaceId: null,
+  rootNotionSpaceId: undefined,
 
   // basic site info (required)
   name: 'My Blog',
@@ -45,7 +45,7 @@ export default siteConfig({
   //   '/foo': '067dd719a912471ea9a3ac10710e7fdf',
   //   '/bar': '0be6efce9daf42688f65c76b89f8eb27'
   // }
-  pageUrlOverrides: null,
+  pageUrlOverrides: undefined,
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
