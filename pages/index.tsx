@@ -74,8 +74,9 @@ const BlogCover = styled.img`
 export const getStaticProps = async () => {
   try {
     const pages = await queryDatabase()
-    console.log(pages);
-    return { props: {pages}, revalidate: 10 }
+    return { props: {
+      pages
+    }, revalidate: 10 }
   } catch (err) {
     console.error('page error', domain, err)
 
@@ -85,7 +86,7 @@ export const getStaticProps = async () => {
   }
 }
 
-export default function NotionDomainPage({pages}: any) {
+export default function NotionDomainPage({ pages }) {
   return (
     <Layout>
       <StyledMainContainer>
