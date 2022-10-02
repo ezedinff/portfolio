@@ -5,7 +5,6 @@ import Layout from '../src/components/Layout';
 import { queryDatabase } from '../lib/notion-client'
 import { resolveNotionPage } from 'lib/resolve-notion-page'
 import Link from "next/link";
-import { NotionPage } from '../components';
 
 const StyledMainContainer = styled.main`
   counter-reset: section;
@@ -57,13 +56,6 @@ const BlogDescription = styled.p`
   margin-bottom: 1rem;
 `;
 
-const BlogLink = styled.a`
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-decoration: none;
-  color: #000;
-`;
-
 const BlogCover = styled.img`
   width: 100%;
   height: 8em;
@@ -98,7 +90,7 @@ export default function NotionDomainPage({ pages }) {
           {pages.map((page: any) => (
             <Link href={`/${page.url}`} key={page.id}>
               <BlogCard>
-                <BlogCover src={page.cover} />
+                <BlogCover src={page.cover} loading = "lazy" alt= {page.title} />
                 <BlogTitle>{page.title}</BlogTitle>
                 <BlogDescription>{page.description}</BlogDescription>
               </BlogCard>

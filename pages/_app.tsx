@@ -40,6 +40,8 @@ import { ThemeProvider } from "styled-components"
 import theme from '../theme'
 import GlobalStyle from '../theme/GlobalStyles'
 
+import Script from 'next/script'
+
 if (!isServer) {
   bootstrap()
 }
@@ -74,9 +76,29 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events])
   const AnyComponent = Component as any
   return (
-    <ThemeProvider theme={theme} >
-      <GlobalStyle bp={theme.bp} mixins={theme.mixins} />
-      <AnyComponent {...pageProps} />
-    </ThemeProvider>
+    <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-9PP7P9FBD6"
+        strategy="lazyOnload"
+      />
+      <Script
+        id="google-analytics"
+        strategy="lazyOnload"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9PP7P9FBD6', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+      <ThemeProvider theme={theme} >
+        <GlobalStyle bp={theme.bp} mixins={theme.mixins} />
+        <AnyComponent {...pageProps} />
+      </ThemeProvider>
+    </>
   )
 }
