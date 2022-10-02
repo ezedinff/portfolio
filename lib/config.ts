@@ -43,7 +43,7 @@ export const pageUrlAdditions = cleanPageUrlMap(
 
 export const inversePageUrlOverrides = invertPageUrlOverrides(pageUrlOverrides)
 
-export const environment = process.env.NODE_ENV || 'development'
+export const environment = process.env.NODE_ENV || 'production'
 export const isDev = environment === 'development'
 
 // general site config
