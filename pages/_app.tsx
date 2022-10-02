@@ -78,7 +78,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-9PP7P9FBD6"
+        src={"https://www.googletagmanager.com/gtag/js?id=" + process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}
         strategy="lazyOnload"
       />
       <Script
@@ -89,7 +89,7 @@ export default function App({ Component, pageProps }: AppProps) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-9PP7P9FBD6', {
+            gtag('config', ${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}, {
               page_path: window.location.pathname,
             });
           `,
