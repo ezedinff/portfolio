@@ -4,11 +4,12 @@ import { ThemeProvider } from "styled-components";
 import theme from "../theme";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
+  const AppComponent = Component as any;
   return (
     <>
        {/* @ts-ignore */ }
       <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
+        <AppComponent {...pageProps} />
       </ThemeProvider>
     </>
   );
