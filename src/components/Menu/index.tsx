@@ -181,9 +181,9 @@ const StyledSidebar = styled.aside<{menuOpen: boolean}>`
 `;
 const navLinks = [
   {url: '', name: 'Home'},
-  {url: '', name: 'Experience'},
-  {url: '', name: 'Work'},
-  {url: '', name: 'Blog'}
+  {url: 'https://www.ezedinfedlu.com#services', name: 'Services'},
+  {url: 'https://www.ezedinfedlu.com#jobs', name: 'Experience'},
+  {url: 'https://www.ezedinfedlu.com#projects', name: 'Projects'},
 ];
 const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
