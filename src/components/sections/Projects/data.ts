@@ -10,6 +10,15 @@ export interface Project {
 
 const projects: Array<Project> = [
   {
+    date: '2020-12-01',
+    title: 'Exam Prep',
+    github: 'https://github.com/ezedinff/exam-prep',
+    demo: 'https://exam-prep-jet.vercel.app/',
+    tech: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Supabase', 'Hygraph'],
+    showInProjects: true,
+    description: 'A web app for prearing for professional certifications exams. it has curated questions and answers for the most popular exams.',
+  },
+  {
     date: "2020-03-27",
     title: "Appzoid",
     github: "https://github.com/ezedinff/appzoid",
