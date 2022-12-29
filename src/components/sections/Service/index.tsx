@@ -35,6 +35,17 @@ const Service  = () => {
                     cards.map((card) => {
                         return (
                             <div className="card" >
+                                <div className="tools">
+                                  <div className="circle">
+                                    <span className="red box"></span>
+                                  </div>
+                                  <div className="circle">
+                                    <span className="yellow box"></span>
+                                  </div>
+                                  <div className="circle">
+                                    <span className="green box"></span>
+                                  </div>
+                                </div>
                                 {<card.icon />}
                                 <h3>{card.title}</h3>
                                 <p className={"service-desc"}>{card.description}</p>
@@ -72,7 +83,13 @@ const StyledServicesSection = styled.section`
     place-items: center;
     margin: 16px;
     border-radius: 16px;
+    overflow: hidden;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
     cursor: pointer;
+    position: relative;
     transition: var(--transition);
     .service-desc{
       font-size: 1.1rem;
@@ -87,8 +104,53 @@ const StyledServicesSection = styled.section`
       transition: var(--transition);
       user-select: none;
     }
+    .tools {
+      display: flex;
+      align-items: center;
+      padding: 9px;
+      position: absolute;
+      top: 0;
+      left: 8px;
+      align-self: flex-start;
+      justify-self: flex-start;
+     }
+     
+     .circle {
+      padding: 0 4px;
+     }
+     
+     .box {
+      display: inline-block;
+      align-items: center;
+      width: 10px;
+      height: 10px;
+      padding: 1px;
+      border-radius: 50%;
+     }
+     
+     .red {
+      background-color: #ff605c;
+     }
+     
+     .yellow {
+      background-color: #ffbd44;
+     }
+     
+     .green {
+      background-color: #00ca4e;
+     }
   }
-
+  
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
   @media only screen and (max-width: 768px) {
     .card {
       width: 100%;

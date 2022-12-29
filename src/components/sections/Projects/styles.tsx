@@ -66,6 +66,13 @@ export const StyledProject = styled.li`
     border-radius: var(--border-radius);
     background-color: var(--light-navy);
     transition: var(--transition);
+transition: border-radius cubic-bezier(0.075, 0.82, 0.165, 1) 1s,
+    transform cubic-bezier(0.075, 0.82, 0.165, 1) 1s;
+  }
+  .project-inner:hover {
+      border-bottom-right-radius: 50px;
+      border-top-left-radius: 50px;
+      transform: scale(1.05);
   }
 
   .project-top {
