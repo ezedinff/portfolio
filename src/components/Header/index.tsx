@@ -176,7 +176,7 @@ const Header = ({isHome}) => {
     );
 
     const ResumeLink = (
-        <a className="resume-button" href="https://drive.google.com/file/d/1N3N9KXwPss_i7YilqH7rbISxi_xxxTHL/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+        <a className="resume-button" href="https://docs.google.com/document/d/1LlEfXU9Jw0HZlVenTrm824fTiPzJ0MMAzuRuKAo5RM8/export?format=pdf" target="_blank" rel="noopener noreferrer">
             Resume
         </a>
     );
