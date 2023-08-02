@@ -301,7 +301,7 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="https://firebasestorage.googleapis.com/v0/b/ezedin-fedlu.appspot.com/o/ezedin%20cv.pdf?alt=media&token=90a093a6-c911-4489-a64b-3412476e7641" className="resume-link">
+            <a href="https://docs.google.com/document/d/1LlEfXU9Jw0HZlVenTrm824fTiPzJ0MMAzuRuKAo5RM8/export?format=pdf" className="resume-link">
               Resume
             </a>
           </nav>
