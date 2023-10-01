@@ -87,7 +87,7 @@ const StyledMainContainer = styled.main`
   counter-reset: section;
 `;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const experiences = await getExperience();
   return {
     props: {
