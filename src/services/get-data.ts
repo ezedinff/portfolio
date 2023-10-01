@@ -2,7 +2,7 @@ import { hygraphClient } from "../../lib/hygraph-client";
 
 const experienceQuery = `
     query {
-        experiences {
+        experiences(last: 100) {
             company
             role
             startDate
