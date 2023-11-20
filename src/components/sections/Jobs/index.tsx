@@ -125,11 +125,11 @@ const Jobs: React.FC<{experiences: Experience[]}> = ({ experiences }) => {
                                             experience.paragraphs.map((paragraph, i) => <li key={`${company}-deeds-${i}`}>{paragraph}</li>)
                                         }
                                     </ul>
-                                    <div>
+                                    {/* <div>
                                         {
                                             experience.skills.map((skill, i) => <StyledTechTag key={`${company}-skill-${skill}-${i}`}>{skill}</StyledTechTag>)
                                         }
-                                    </div>
+                                    </div> */}
                                 </StyledTabPanel>
                             </CSSTransition>
                         );
