@@ -8,7 +8,7 @@ import {
     StyledTabButton,
     StyledTabList,
     StyledTabPanel,
-    StyledTabPanels, StyledTechTag
+    StyledTabPanels,
 } from "./styles";
 import {KEY_CODES} from "../../Menu";
 import { Experience } from '../../../services/get-data';
