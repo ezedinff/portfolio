@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Home() {
   return <Table />;
@@ -9,9 +9,10 @@ export default function Home() {
 function Table() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const contextRef = useRef<CanvasRenderingContext2D | null>(null);
+  const [score, setScore] = useState({ left: 0, right: 0 });
 
   useEffect(() => {
-    const canvas = canvasRef.current as unknown as HTMLCanvasElement;
+    const canvas = canvasRef.current as HTMLCanvasElement;
     if (!canvas) return;
     canvas.width = 750;
     canvas.height = 585;
@@ -25,7 +26,8 @@ function Table() {
       80,
       "white",
       context,
-      canvas
+      canvas,
+      true
     );
     const rightPaddle = new Paddle(
       canvas.width - 3 * 15,
@@ -34,8 +36,19 @@ function Table() {
       80,
       "white",
       context,
-      canvas
+      canvas,
+      false
     );
+
+    const scoreBoard = new Score(
+      canvas.width / 2 - 20,
+      40,
+      score.left,
+      score.right,
+      context,
+      setScore
+    );
+
     const ball = new Ball(
       canvas.width / 2,
       canvas.height / 2,
@@ -44,7 +57,8 @@ function Table() {
       context,
       canvas,
       leftPaddle,
-      rightPaddle
+      rightPaddle,
+      scoreBoard
     );
 
     const animate = () => {
@@ -61,8 +75,9 @@ function Table() {
       context.stroke();
 
       leftPaddle.update();
-      rightPaddle.update();
+      rightPaddle.update(ball); // Pass the ball's y position to the AI-controlled paddle
       ball.update();
+      scoreBoard.update();
 
       requestAnimationFrame(animate);
     };
@@ -87,6 +102,8 @@ class Ball {
   leftPaddle: Paddle;
   rightPaddle: Paddle;
 
+  scoreBoard!: Score;
+
   constructor(
     x: number,
     y: number,
@@ -95,7 +112,8 @@ class Ball {
     context: CanvasRenderingContext2D,
     canvas: HTMLCanvasElement,
     leftPaddle: Paddle,
-    rightPaddle: Paddle
+    rightPaddle: Paddle,
+    scoreBoard: Score
   ) {
     this.x = x;
     this.y = y;
@@ -107,6 +125,7 @@ class Ball {
     this.canvas = canvas;
     this.leftPaddle = leftPaddle;
     this.rightPaddle = rightPaddle;
+    this.scoreBoard = scoreBoard;
   }
 
   draw() {
@@ -124,8 +143,12 @@ class Ball {
     this.y += this.dy;
 
     // Handle ball collisions with walls
-    if (this.x + this.radius > this.canvas.width || this.x - this.radius < 0) {
-      this.dx = -this.dx;
+    if (this.x + this.radius > this.canvas.width) {
+      this.scoreBoard.updateScore("left");
+      this.reset();
+    } else if (this.x - this.radius < 0) {
+      this.scoreBoard.updateScore("right");
+      this.reset();
     }
 
     if (this.y - this.radius < 0 || this.y + this.radius > this.canvas.height) {
@@ -170,6 +193,7 @@ class Paddle {
   dy: number;
   context!: CanvasRenderingContext2D;
   canvas!: HTMLCanvasElement;
+  isUserControlled: boolean;
 
   constructor(
     x: number,
@@ -178,7 +202,8 @@ class Paddle {
     height: number,
     color: string,
     context: CanvasRenderingContext2D,
-    canvas: HTMLCanvasElement
+    canvas: HTMLCanvasElement,
+    isUserControlled: boolean
   ) {
     this.x = x;
     this.y = y;
@@ -188,10 +213,13 @@ class Paddle {
     this.dy = 0;
     this.context = context;
     this.canvas = canvas;
+    this.isUserControlled = isUserControlled;
 
     // Event listeners for paddle movement
-    document.addEventListener("keydown", this.handleKeyDown);
-    document.addEventListener("keyup", this.handleKeyUp);
+    if (this.isUserControlled) {
+      document.addEventListener("keydown", this.handleKeyDown);
+      document.addEventListener("keyup", this.handleKeyUp);
+    }
   }
 
   draw() {
@@ -202,28 +230,43 @@ class Paddle {
     this.context.closePath();
   }
 
-  update() {
+  update(ball?: Ball) {
     this.draw();
 
-    // Move the paddle based on keyboard input
-    if (this.dy < 0 && this.y > 0) {
-      this.y += this.dy;
-    } else if (this.dy > 0 && this.y + this.height < this.canvas.height) {
-      this.y += this.dy;
+    // Move the paddle based on keyboard input (if user-controlled)
+    if (this.isUserControlled) {
+      if (this.dy < 0 && this.y > 0) {
+        this.y += this.dy;
+      } else if (this.dy > 0 && this.y + this.height < this.canvas.height) {
+        this.y += this.dy;
+      }
+    } else {
+      // Move the paddle based on the ball's y position (if AI-controlled)
+      if (ball) {
+        if (this.y + this.height / 2 < ball.y) {
+          this.y += 4;
+        } else if (this.y + this.height / 2 > ball.y) {
+          this.y -= 4;
+        }
+      }
     }
   }
 
   handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === "ArrowUp") {
-      this.dy = -6; // Adjust the paddle speed if needed
-    } else if (event.key === "ArrowDown") {
-      this.dy = 6;
+    if (this.isUserControlled) {
+      if (event.key === "ArrowUp") {
+        this.dy = -6; // Adjust the paddle speed if needed
+      } else if (event.key === "ArrowDown") {
+        this.dy = 6;
+      }
     }
   };
 
   handleKeyUp = (event: KeyboardEvent) => {
-    if (event.key === "ArrowUp" || event.key === "ArrowDown") {
-      this.dy = 0;
+    if (this.isUserControlled) {
+      if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+        this.dy = 0;
+      }
     }
   };
 }
@@ -231,30 +274,51 @@ class Paddle {
 class Score {
   x: number;
   y: number;
-  value: number;
+  left!: number;
+  right!: number;
   context!: CanvasRenderingContext2D;
-  constructor(x: number, y: number, context: CanvasRenderingContext2D) {
+  setScore!: React.Dispatch<
+    React.SetStateAction<{
+      left: number;
+      right: number;
+    }>
+  >;
+  constructor(
+    x: number,
+    y: number,
+    left: number,
+    right: number,
+    context: CanvasRenderingContext2D,
+    setScore: React.Dispatch<
+      React.SetStateAction<{
+        left: number;
+        right: number;
+      }>>
+  ) {
     this.x = x;
     this.y = y;
-    this.value = 0;
+    this.left = left;
+    this.right = right;
     this.context = context;
+    this.setScore = setScore;
   }
 
   draw(context: CanvasRenderingContext2D) {
     context.font = "20px Arial";
-    context.fillStyle = "black";
-    context.fillText(`Score: ${this.value}`, this.x, this.y);
+    context.fillStyle = "white";
+    context.fillText(`${this.left} - ${this.right}`, this.x, this.y);
   }
 
-  increase() {
-    this.value += 1;
+  updateScore(position: "left" | "right") {
+    if (position === "left") {
+      this.left += 1;
+    } else {
+      this.right += 1;
+    }
+    this.setScore({ left: this.left, right: this.right });
   }
 
   update() {
     this.draw(this.context);
-  }
-
-  reset() {
-    this.value = 0;
   }
 }
