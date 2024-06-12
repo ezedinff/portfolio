@@ -67,13 +67,13 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Ezedin Fedlu.</h2>;
-  const three = <h3 className="big-heading">I Craft Digital Dreams for the Web and Mobile.</h3>;
+  const three = <h3 className="big-heading">I Craft Digital Dreams</h3>;
   const four = (
     <p>
-      I'm Senior Software Engineer with a passion for creating extraordinary digital journeys. Currently, I'm proudly contributing my skills at{' '}
-      <a href="https://www.pushitreplays.com/" target="_blank" rel="noreferrer">
-        Pushit Replays
-      </a>{' '}where I lead in crafting accessible, human-centered digital innovations.
+      I'm Software Engineer with a passion for creating extraordinary digital experiences.
+      Proudly contributing skills at <a href="https://www.volvocars.com" target="_blank" rel="noreferrer">
+      Volvo Cars
+      </a>,{' '} driving our mission of safe, sustainable, and convenient mobility solutions. 
     </p>
   );
   const five = (
