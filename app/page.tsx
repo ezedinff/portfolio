@@ -29,7 +29,11 @@ Thank you for your assistance!
 
 Best regards,
 [Your Name]`);
-
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+      window.open(`mailto:${email}`, "_blank");
+      return;
+    }
     const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`;
     window.open(gmailComposeUrl, "_blank");
   };
