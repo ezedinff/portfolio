@@ -36,13 +36,6 @@ Best regards,
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
-      {/* Header */}
-      <Header
-        isMenuOpen={isMenuOpen}
-        setIsMenuOpen={setIsMenuOpen}
-        title="TechPro Support"
-        hideMenu
-      />
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-deep-blue to-bright-teal text-white py-20">
@@ -149,9 +142,6 @@ Best regards,
         </div>
       </section> */}
       <CertificationBadgesSection />
-
-      {/* Footer */}
-      <Footer />
 
       {/* Floating Chat Button */}
       <button
