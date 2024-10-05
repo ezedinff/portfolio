@@ -1,13 +1,12 @@
 'use client'
 
 import { useEffect } from 'react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 export const GA4_MEASUREMENT_ID = 'G-L66Z9YX40E';
 
 const GA4Analytics = () => {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -16,8 +15,8 @@ const GA4Analytics = () => {
       });
     };
 
-    handleRouteChange(`${pathname}${searchParams}`);
-  }, [pathname, searchParams]);
+    handleRouteChange(pathname);
+  }, [pathname]);
 
   return null;
 };
