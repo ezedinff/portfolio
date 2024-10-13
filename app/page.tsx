@@ -7,6 +7,9 @@ import BookingButton from "@/components/BookingButton";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CertificationBadgesSection from "@/components/CertificationBadgesSection";
+import HeroSection from "@/components/HeroSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import TestimonialSection from "@/components/TestimonialSection";
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,66 +45,13 @@ Best regards,
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-deep-blue to-bright-teal text-white py-20">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-              Unlock Your Tech Potential with Expert Support
-            </h1>
-            <p className="text-xl mb-6">
-              Breakthrough tech roadblocks in minutes, not hours. Get instant,
-              personalized solutions via secure screen sharing.
-            </p>
-            <p className="text-lg mb-8 font-semibold">
-              Book your free 15-minute consultation and supercharge your
-              productivity today!
-            </p>
-            <BookingButton className="mr-4" />
-          </div>
-          <div className="md:w-1/2 flex justify-center">
-            <div className="w-64 h-64 bg-white/10 rounded-full flex items-center justify-center">
-              <Code className="w-32 h-32 text-white animate-pulse" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Features Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { icon: Monitor, title: "24/7 Availability" },
-              { icon: Lock, title: "Secure Screen Sharing" },
-              { icon: CreditCard, title: "Pay-as-you-go Options" },
-            ].map((feature, index) => (
-              <Card key={index} className="text-center">
-                <CardHeader>
-                  <feature.icon className="w-12 h-12 mx-auto text-bright-teal" />
-                  <CardTitle className="mt-4">{feature.title}</CardTitle>
-                </CardHeader>
-                {/* <CardContent>
-                  <p className="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </CardContent> */}
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
 
       {/* Testimonial Section */}
-      <section className="bg-deep-blue text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-8">What peoples are saying</h2>
-          <blockquote className="text-xl italic mb-4">
-            "TechPro Support saved me hours of frustration. Their experts are
-            knowledgeable and efficient."
-          </blockquote>
-          <cite className="text-bright-teal">
-            - Sarah K., Software Developer
-          </cite>
-        </div>
-      </section>
+      <TestimonialSection />
 
       {/* Pricing Section */}
       <section className="py-20">
