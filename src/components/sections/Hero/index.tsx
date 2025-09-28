@@ -1,11 +1,10 @@
 import React, {useState, useEffect, useRef} from 'react';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+// import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import {email, navDelay, loaderDelay, srConfig} from '../../../configs';
 import usePrefersReducedMotion from '../../../hooks/usePrefersReducedMotion';
 
 const StyledHeroSection = styled.section`
-  ${({ theme }) => theme.mixins.flexCenter};
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
@@ -47,11 +46,14 @@ const StyledHeroSection = styled.section`
 
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
+    setIsClient(true);
     if (prefersReducedMotion) {
+      setIsMounted(true);
       return;
     }
     async function animate() {
@@ -86,21 +88,25 @@ const Hero = () => {
 
   return (
     <StyledHeroSection id={"home"} ref={revealContainer}>
-      {prefersReducedMotion ? (
+      {!isClient ? (
+        <>
+          {items.map((item, i) => (
+            <div key={i}>{item}</div>
+          ))}
+        </>
+      ) : prefersReducedMotion ? (
         <>
           {items.map((item, i) => (
             <div key={i}>{item}</div>
           ))}
         </>
       ) : (
-        <TransitionGroup component={null}>
+        <>
           {isMounted &&
             items.map((item, i) => (
-              <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-                <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
-              </CSSTransition>
+              <div key={i} style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
             ))}
-        </TransitionGroup>
+        </>
       )}
     </StyledHeroSection>
   );

@@ -32,9 +32,9 @@ const Service  = () => {
             <h2 className="numbered-heading">What I'm Offering</h2>
             <div className="card-wrapper">
                 {
-                    cards.map((card) => {
+                    cards.map((card, index) => {
                         return (
-                            <div className="card" >
+                            <div key={index} className="card" >
                                 <div className="tools">
                                   <div className="circle">
                                     <span className="red box"></span>

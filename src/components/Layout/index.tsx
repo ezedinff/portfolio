@@ -27,25 +27,20 @@ const layout: React.FC = ({children}) => {
     }, [isLoading]);
     return (
         <div id="root">
-        <a className="skip-to-content" href="#content">
-          Skip to Content
-        </a>
-            {
-                isLoading ? (
-                    <Loader finishLoading={() => setIsLoading(false)} />
-                ) : (
-                    <StyledContent>
-                        <Header isHome={true}/>
-                        <Social isHome={true}/>
-                        <Email isHome={true} />
-                        <div id="content">
-                            {children}
-                            <Footer />
-                        </div>
-                    </StyledContent>
-                )
-            }
-      </div>
+            <a className="skip-to-content" href="#content">
+                Skip to Content
+            </a>
+            {isLoading && <Loader finishLoading={() => setIsLoading(false)} />}
+            <StyledContent style={{ visibility: isLoading ? 'hidden' : 'visible' }}>
+                <Header isHome={isHome}/>
+                <Social isHome={isHome}/>
+                <Email isHome={isHome} />
+                <main id="content">
+                    {children}
+                    <Footer />
+                </main>
+            </StyledContent>
+        </div>
     );
 };
 

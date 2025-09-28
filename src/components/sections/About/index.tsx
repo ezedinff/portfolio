@@ -2,13 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import usePrefersReducedMotion from '../../../hooks/usePrefersReducedMotion';
 import Image from 'next/image';
-import {ImageLoaderProps} from "next/dist/client/image";
 import {srConfig} from "../../../configs";
 // import {srConfig} from "../../../configs";
 // import sr from "../../../utils/sr";
 
 
-const myLoader = (props: ImageLoaderProps) => {
+const myLoader = (props: any) => {
     console.log(props);
     return `https://avatars.githubusercontent.com/u/${props.src}?w=${props.width}`
 }
@@ -90,6 +89,7 @@ const StyledPic = styled.div`
       mix-blend-mode: multiply;
       filter: grayscale(100%) contrast(1);
       transition: var(--transition);
+      height: auto!important;
     }
 
     &:before,
@@ -176,6 +176,7 @@ const About = () => {
                             alt="Ezedin Fedlu"
                             width={500}
                             height={500}
+                            quality={100}
                         />
                     </div>
                 </StyledPic>

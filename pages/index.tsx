@@ -59,15 +59,13 @@ const Bubble = styled.div`
   }
 `;
 
-const BubbleFactory = (color: string, left: string, top: string) => {
-  return styled(Bubble)`
-    background: ${color};
-    animation: animateBubble 12s linear infinite,
-      sideWays 2s ease-in-out infinite alternate;
-    left: ${left};
-    top: ${top};
-  `;
-};
+const StyledBubble = styled(Bubble)<{$color: string; $left: string; $top: string}>`
+  background: ${props => props.$color};
+  animation: animateBubble 12s linear infinite,
+    sideWays 2s ease-in-out infinite alternate;
+  left: ${props => props.$left};
+  top: ${props => props.$top};
+`;
 
 const generateBubbles = (count: number) => {
   const uniqueColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff'];
@@ -108,12 +106,16 @@ const Home: React.FC<{ experiences: Experience[] }> = ({ experiences }) => {
 
       <Layout>
         <BubblesWrapper>
-          {generateBubbles(10).map((bubble, index) => {
-            const Bubble = BubbleFactory(bubble.color, bubble.left, bubble.top);
-            return <Bubble key={index} />;
-          })}
+          {generateBubbles(10).map((bubble, index) => (
+            <StyledBubble 
+              key={index} 
+              $color={bubble.color} 
+              $left={bubble.left} 
+              $top={bubble.top} 
+            />
+          ))}
         </BubblesWrapper>
-        <StyledMainContainer className="fillHeight">
+        <StyledMainContainer className="fillHeight" role="main">
           <Hero />
           <About />
           <Service />

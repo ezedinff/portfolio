@@ -22,8 +22,7 @@ const StyledLoader = styled.div`
     width: max-content;
     max-width: 200px;
     transition: var(--transition);
-    // @ts-ignore
-    opacity: ${(props: {isMounted: boolean}) => (props.isMounted ? 1 : 0)};
+    opacity: ${(props: {$isMounted: boolean}) => (props.$isMounted ? 1 : 0)};
     svg {
       display: block;
       width: 100%;
@@ -47,20 +46,20 @@ const Loader: FC<Props> = ({finishLoading}) => {
 
         loader
             .add({
-                targets: '#logo path',
+                targets: '.loader #logo path',
                 delay: 300,
                 duration: 1500,
                 easing: 'easeInOutQuart',
                 strokeDashoffset: [anime.setDashoffset, 0],
             })
             .add({
-                targets: '#logo #B',
+                targets: '.loader #logo #B',
                 duration: 700,
                 easing: 'easeInOutQuart',
                 opacity: 1,
             })
             .add({
-                targets: '#logo',
+                targets: '.loader #logo',
                 delay: 500,
                 duration: 300,
                 easing: 'easeInOutQuart',
@@ -82,7 +81,7 @@ const Loader: FC<Props> = ({finishLoading}) => {
     }, []);
 
     return (
-        <StyledLoader className="loader" isMounted={isMounted}>
+        <StyledLoader className="loader" $isMounted={isMounted}>
             <div className="logo-wrapper">
                 <IconLogo />
             </div>

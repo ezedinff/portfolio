@@ -81,7 +81,7 @@ const Jobs: React.FC<{experiences: Experience[]}> = ({ experiences }) => {
                         return (
                             <StyledTabButton
                                 key={i}
-                                isActive={activeTabId === i}
+                                $isActive={activeTabId === i}
                                 onClick={() => setActiveTabId(i)}
                                 ref={el => (tabs.current[i] = el as HTMLButtonElement)}
                                 id={`tab-${i}`}
@@ -92,7 +92,7 @@ const Jobs: React.FC<{experiences: Experience[]}> = ({ experiences }) => {
                             </StyledTabButton>
                         );
                     })}
-                    <StyledHighlight activeTabId={activeTabId} />
+                    <StyledHighlight $activeTabId={activeTabId} />
                 </StyledTabList>
 
                 <StyledTabPanels>

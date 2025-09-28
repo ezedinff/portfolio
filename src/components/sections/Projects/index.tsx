@@ -90,10 +90,8 @@ const Projects = () => {
     return (<StyledProjectsSection id={"projects"}>
     <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
 
-    <Link  href="/archive">
-        <a className="inline-link archive-link" ref={revealArchiveLink}>
-            view the archive
-        </a>
+    <Link href="/archive" className="inline-link archive-link" ref={revealArchiveLink}>
+        view the archive
     </Link>
 
     

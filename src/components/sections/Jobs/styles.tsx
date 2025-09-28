@@ -71,7 +71,7 @@ export const StyledTechTag = styled.span`
   }
 `
 
-export const StyledTabButton = styled.button`
+export const StyledTabButton = styled.button<{$isActive: boolean}>`
   ${({ theme }) => theme.mixins.link};
   display: flex;
   align-items: center;
@@ -80,7 +80,7 @@ export const StyledTabButton = styled.button`
   padding: 0 20px 2px;
   border-left: 2px solid var(--lightest-navy);
   background-color: transparent;
-  color: ${({ isActive }: {isActive: boolean}) => (isActive ? 'var(--green)' : 'var(--slate)')};
+  color: ${({ $isActive }) => ($isActive ? 'var(--green)' : 'var(--slate)')};
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
@@ -106,7 +106,7 @@ export const StyledTabButton = styled.button`
 
 
 
-export const StyledHighlight = styled.div`
+export const StyledHighlight = styled.div<{$activeTabId: number}>`
   position: absolute;
   top: 0;
   left: 0;
@@ -115,7 +115,7 @@ export const StyledHighlight = styled.div`
   height: var(--tab-height);
   border-radius: var(--border-radius);
   background: var(--green);
-  transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
+  transform: translateY(calc(${({ $activeTabId }) => $activeTabId} * var(--tab-height)));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
 
@@ -124,7 +124,7 @@ export const StyledHighlight = styled.div`
     bottom: 0;
     height: 0px;
     margin-left: 50px;
-    transform: translateX(calc(${({ activeTabId }: {activeTabId: any}) => activeTabId} * var(--tab-width)));
+    transform: translateX(calc(${({ $activeTabId }) => $activeTabId} * var(--tab-width)));
   }
   @media (max-width: 480px) {
     margin-left: 25px;
