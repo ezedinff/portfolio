@@ -176,7 +176,10 @@ const Header = ({isHome}) => {
     );
 
     const ResumeLink = (
-        <a className="resume-button" href="https://docs.google.com/document/d/1LlEfXU9Jw0HZlVenTrm824fTiPzJ0MMAzuRuKAo5RM8/export?format=pdf" target="_blank" rel="noopener noreferrer">
+        // <a className="resume-button" href="https://docs.google.com/document/d/1LlEfXU9Jw0HZlVenTrm824fTiPzJ0MMAzuRuKAo5RM8/export?format=pdf" target="_blank" rel="noopener noreferrer">
+        //     Resume
+        // </a>
+        <a className="resume-button" href="http://bit.ly/3IHbBmT" target="_blank" rel="noopener noreferrer">
             Resume
         </a>
     );

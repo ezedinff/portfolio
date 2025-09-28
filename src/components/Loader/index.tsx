@@ -6,8 +6,10 @@ import {IconLogo} from "../icons";
 interface Props {
     finishLoading: () => void;
 }
-const StyledLoader = styled.div`
-  ${({ theme }) => theme.mixins.flexCenter};
+const StyledLoader = styled.div<{$isMounted: boolean}>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -22,7 +24,7 @@ const StyledLoader = styled.div`
     width: max-content;
     max-width: 200px;
     transition: var(--transition);
-    opacity: ${(props: {$isMounted: boolean}) => (props.$isMounted ? 1 : 0)};
+    opacity: ${props => (props.$isMounted ? 1 : 0)};
     svg {
       display: block;
       width: 100%;

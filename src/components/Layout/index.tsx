@@ -18,7 +18,7 @@ const StyledContent = styled.div`
   min-height: 100vh;
 `;
 
-const layout: React.FC = ({children}) => {
+const layout: React.FC<{children: React.ReactNode}> = ({children}) => {
     const router = useRouter();
     const isHome = router.pathname === '/';
     const [isLoading, setIsLoading] = useState(isHome);

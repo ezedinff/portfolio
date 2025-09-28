@@ -17,12 +17,12 @@ const ProjectInner: FC<{project: Project}> = ({project}) => {
               <Icon name="Folder" />
             </div>
             <div className="project-links">
-              {github && (
+              {github && github !== '#' && (
                 <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
                   <Icon name="GitHub" />
                 </a>
               )}
-              {demo && (
+              {demo && demo !== '#' && (
                 <a
                   href={demo}
                   aria-label="External Link"
@@ -36,9 +36,13 @@ const ProjectInner: FC<{project: Project}> = ({project}) => {
           </div>
 
           <h3 className="project-title">
-            <a href={demo} target="_blank" rel="noreferrer">
-              {title}
-            </a>
+            {demo && demo !== '#' ? (
+              <a href={demo} target="_blank" rel="noreferrer">
+                {title}
+              </a>
+            ) : (
+              title
+            )}
           </h3>
 
           <div className="project-description">

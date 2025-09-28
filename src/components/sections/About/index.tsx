@@ -136,7 +136,22 @@ const About = () => {
         animate()
     }, []);
 
-    const skills = ['JavaScript (ES6+)', 'React', 'Angular', 'Laravel', 'Node.js', 'Flutter', '.Net core'];
+    const skills = [
+        'JavaScript/TypeScript',
+        'C#/.NET Framework', 
+        'React/Angular',
+        'Node.js/Express.js',
+        'Spring Boot/Java',
+        'Python/Django',
+        'PostgreSQL/MongoDB',
+        'Neo4j/Redis',
+        'AWS/Azure/GKE',
+        'Docker/Kubernetes',
+        'GraphQL APIs',
+        'Microservices',
+        'AI/ML Integration',
+        'Event-Driven Systems'
+    ];
 
     return (
         <StyledAboutSection id="about" ref={revealContainer}>
@@ -146,20 +161,20 @@ const About = () => {
                 <StyledText>
                     <div>
                         <p>
-                            Hello! I'm Ezedin <small>(Dark Horse)</small> and I'm Talented Senior Software Engineer proficient in all phases of the software
-                            development lifecycle. Adept at working with Agile and Scrum
-                            methodologies to accomplish project milestones according to specific
-                            timeframes. Highly organized and detail-oriented
-                            professional with years of progressive experience in the field.
+                            Hello! I'm Ezedin, an innovative Software Engineer with 9+ years of experience 
+                            transforming business challenges into technological solutions. Currently architecting 
+                            large-scale automotive systems at Volvo Cars, specializing in AI-powered solutions, 
+                            full-stack development, and cloud architecture.
                         </p>
 
                         <p>
-                            I've had the privilege of working at{' '}
-                            many companies and individuals. My main focus these days is building accessible, inclusive products and digital
-                            experiences for my clients.
+                            I've had the privilege of working across multiple industries and countries, from 
+                            automotive systems in Sweden to fintech in the US. My key strengths include strategic 
+                            problem-solving, technology versatility across multiple stacks, microservices & cloud 
+                            infrastructure expertise, and AI & machine learning integration.
                         </p>
 
-                        <p>Here are a few technologies I've been working with recently:</p>
+                        <p>Here are the core technologies I work with:</p>
                     </div>
 
                     <ul className="skills-list">
