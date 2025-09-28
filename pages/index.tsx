@@ -67,7 +67,7 @@ const StyledParticle = styled(Particle)<{$color: string; $left: string; $top: st
   animation: ${props => props.$isWinter ? 'snowfall 8s linear infinite' : 'animateBubble 12s linear infinite, sideWays 2s ease-in-out infinite alternate'};
   left: ${props => props.$left};
   top: ${props => props.$top};
-  animation-delay: ${props => Math.random() * 8}s;
+  animation-delay: ${() => Math.random() * 8}s;
 `;
 
 const generateParticles = (count: number) => {

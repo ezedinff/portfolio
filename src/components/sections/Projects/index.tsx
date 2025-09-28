@@ -120,7 +120,7 @@ const Projects = () => {
                   exit={false}>
                   <StyledProject
                     key={i}
-                    ref={(el: HTMLLIElement) => (revealProjects.current[i] = el)}
+                    ref={(el: HTMLLIElement) => { revealProjects.current[i] = el; }}
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
                     }}>

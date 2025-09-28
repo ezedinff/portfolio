@@ -83,7 +83,7 @@ const Jobs: React.FC<{experiences: Experience[]}> = ({ experiences }) => {
                                 key={i}
                                 $isActive={activeTabId === i}
                                 onClick={() => setActiveTabId(i)}
-                                ref={el => (tabs.current[i] = el as HTMLButtonElement)}
+                                ref={el => { tabs.current[i] = el as HTMLButtonElement; }}
                                 id={`tab-${i}`}
                                 role="tab"
                                 aria-selected={activeTabId === i ? true : false}

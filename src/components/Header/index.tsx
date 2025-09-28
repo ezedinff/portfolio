@@ -157,9 +157,7 @@ const Header = ({isHome}) => {
         };
     }, []);
 
-    const timeout = isHome ? 200 : 0;
-    const fadeClass = isHome ? 'fade' : '';
-    const fadeDownClass = isHome ? 'fadedown' : '';
+
 
     const Logo = (
         <div className="logo" tabIndex={-1}>

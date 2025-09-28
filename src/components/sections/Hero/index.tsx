@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 // import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
-import {email, navDelay, loaderDelay, srConfig} from '../../../configs';
+import {email, navDelay, srConfig} from '../../../configs';
 import usePrefersReducedMotion from '../../../hooks/usePrefersReducedMotion';
 
 const StyledHeroSection = styled.section`

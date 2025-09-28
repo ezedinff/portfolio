@@ -3,21 +3,21 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
 import { loaderDelay } from "../../configs";
-import { ReactNode } from "hoist-non-react-statics/node_modules/@types/react";
+import { ReactNode } from "react";
 
-const StyledSideElement = styled.div`
+const StyledSideElement = styled.div<{$orientation: "left" | "right"}>`
   width: 40px;
   position: fixed;
   bottom: 0;
   display: inline;
-  left: ${(props: any) => (props.$orientation === "left" ? "40px" : "auto")};
-  right: ${(props: any) => (props.$orientation === "left" ? "auto" : "40px")};
+  left: ${(props) => (props.$orientation === "left" ? "40px" : "auto")};
+  right: ${(props) => (props.$orientation === "left" ? "auto" : "40px")};
   z-index: 10;
   color: var(--light-slate);
 
   @media (max-width: 1080px) {
-    left: ${(props: any) => (props.$orientation === "left" ? "20px" : "auto")};
-    right: ${(props: any) => (props.$orientation === "left" ? "auto" : "20px")};
+    left: ${(props) => (props.$orientation === "left" ? "20px" : "auto")};
+    right: ${(props) => (props.$orientation === "left" ? "auto" : "20px")};
   }
 
   @media (max-width: 768px) {
