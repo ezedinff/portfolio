@@ -32,6 +32,10 @@ const StyledText = styled.div`
     overflow: hidden;
     list-style: none;
 
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
     li {
       position: relative;
       margin-bottom: 10px;
