@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRef, FC, useEffect } from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+
 import { srConfig } from "../../../configs";
 import { usePrefersReducedMotion } from "../../../hooks";
 import { Icon } from "../../icons";
@@ -110,14 +110,9 @@ const Projects = () => {
               ))}
           </>
         ) : (
-          <TransitionGroup component={null}>
+          <>
             {projectsToShow &&
               projectsToShow.map(( project, i) => (
-                <CSSTransition
-                  key={i}
-                  classNames="fadeup"
-                  timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                  exit={false}>
                   <StyledProject
                     key={i}
                     ref={(el: HTMLLIElement) => { revealProjects.current[i] = el; }}
@@ -126,9 +121,8 @@ const Projects = () => {
                     }}>
                     <ProjectInner project={project} />
                   </StyledProject>
-                </CSSTransition>
               ))}
-          </TransitionGroup>
+          </>
         )}
       </ul>
 {/* 

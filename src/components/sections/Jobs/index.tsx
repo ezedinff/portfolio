@@ -1,7 +1,7 @@
 import {useEffect, useRef, useState} from "react";
 import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 import {srConfig} from "../../../configs";
-import { CSSTransition } from 'react-transition-group';
+
 import {
     StyledHighlight,
     StyledJobsSection,
@@ -101,13 +101,14 @@ const Jobs: React.FC<{experiences: Experience[]}> = ({ experiences }) => {
                         const { role, company, startDate, endDate } = experience;
 
                         return (
-                            <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
                                 <StyledTabPanel
+                                    key={i}
                                     id={`panel-${i}`}
                                     role="tabpanel"
                                     aria-labelledby={`tab-${i}`}
                                     aria-hidden={activeTabId !== i}
-                                    hidden={activeTabId !== i}>
+                                    hidden={activeTabId !== i}
+                                    className={activeTabId === i ? 'fade-enter-active' : 'fade-exit-active'}>
                                     <h3>
                                         <span>{role}</span>
                                         <span className="company">
@@ -131,7 +132,6 @@ const Jobs: React.FC<{experiences: Experience[]}> = ({ experiences }) => {
                                         }
                                     </div> */}
                                 </StyledTabPanel>
-                            </CSSTransition>
                         );
                     })}
                 </StyledTabPanels>
