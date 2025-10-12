@@ -10,6 +10,7 @@ const experienceQuery = `
             paragraphs
             skills
             order
+            website
         }
     }
 `;
@@ -22,6 +23,7 @@ export type Experience = {
     paragraphs: string[];
     skills: string[];
     order: number;
+    website: string;
 };
 
 export const getExperience = async (): Promise<Experience[]> => {

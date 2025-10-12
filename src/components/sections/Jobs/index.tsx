@@ -113,7 +113,7 @@ const Jobs: React.FC<{experiences: Experience[]}> = ({ experiences }) => {
                                         <span>{role}</span>
                                         <span className="company">
                         &nbsp;@&nbsp;
-                                            <a href={"#"} className="inline-link">
+                                            <a href={experience.website || "#jobs"} className="inline-link" target="_blank">
                           {company}
                         </a>
                       </span>

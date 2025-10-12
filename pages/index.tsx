@@ -132,10 +132,18 @@ const Home: React.FC<{ experiences: Experience[] }> = ({ experiences }) => {
   return (
     <>
       <SearchEngineOptimization
-        title={"Ezedin Fedlu - Software Engineer"}
-        siteUrl={"https://ezedin.fedlu.com"}
+        title={"Ezedin Fedlu - Senior Software Engineer"}
+        siteUrl={"https://ezedinfedlu.com"}
         image={"https://avatars.githubusercontent.com/u/19648503"}
-        description="I'm software engineer who specializes in building (and occasionally designing) exceptional digital experiences."
+        description="Innovative Software Engineer with 9+ Years of Experience transforming business challenges into technological solutions.
+
+Currently architecting large-scale automotive systems at Volvo Cars, specializing in AI-powered solutions, full-stack development, and cloud architecture.
+
+Key Strengths:
+• Strategic Problem-Solving & Client-Focused Solutions
+• Technology Versatility across Multiple Stacks
+• Microservices & Cloud Infrastructure Expertise
+• AI & Machine Learning Integration"
       />
       <GlobalStyle bp={theme.bp} mixins={theme.mixins} />
 
